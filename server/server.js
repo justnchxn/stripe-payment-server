@@ -4,7 +4,7 @@ const { resolve } = require('path');
 // Replace if using a different env file or config
 const env = require('dotenv').config({ path: './.env' });
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
+const stripe = require('stripe')("pk_test_51MosvNCKaL0N8PQYrpDiAANdJ80grN4prxoRNHxFNCVISd6VHmknE4V5Xt3qNEXeGdkZM0rZpybzWC9QurkQFEW100osvz5ibl", {
   apiVersion: '2020-08-27',
   appInfo: { // For sample support and debugging, not required for production:
     name: "stripe-samples/<your-sample-name>",
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 
 app.get('/config', (req, res) => {
   res.send({
-    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+    publishableKey: "sk_test_51MosvNCKaL0N8PQYErMLzODrFmZralyQeOk6vBfN3yqZoMV1mvPdSBcIssyB5RSJeiR3MXx02NhXU79u8EVhjjci00wglWHnE4",
   });
 });
 
